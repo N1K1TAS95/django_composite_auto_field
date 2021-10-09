@@ -9,13 +9,17 @@ django-composite-auto-field
 Installation
 ----------
 Install django-composite-auto-field::
+
     pip install django-composite-auto-field
 
 Usage
 ----------
 Import to your models::
+
     from django-composite-auto-field.models.fields import CompositeAutoField
 
 Usage::
+
     class Order(models.Model):
         code = CompositeAutoField(prefix='ORD', use_year=True, zeros=5)
+
