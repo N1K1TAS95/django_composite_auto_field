@@ -16,7 +16,7 @@ Usage
 ----------
 Import to your models::
 
-    from django-composite-auto-field.models.fields import CompositeAutoField
+    from django_composite_auto_field.models.fields import CompositeAutoField
 
 Usage::
 
