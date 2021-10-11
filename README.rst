@@ -53,9 +53,10 @@ Release Notes
 
 Todo
 ---------
-    - ☐ Create test cases
-    - ☑ Initial release
-    - ☐ Improve last code parsing for make arguments changeable
+    - ❌ Create test cases
+    - ✔️ Initial release on GitHub
+    - ❌ Initial release on PyPi
+    - ❌ Improve last code parsing for make arguments changeable
 
 Contributing
 ----------
