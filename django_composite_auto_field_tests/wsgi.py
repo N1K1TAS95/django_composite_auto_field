@@ -1,5 +1,5 @@
 """
-WSGI config for django_composite_auto_field project.
+WSGI config for django_composite_auto_field_tests project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_composite_auto_field.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_composite_auto_field_tests.settings')
 
 application = get_wsgi_application()

@@ -18,7 +18,7 @@ This field uses Django's Aggregate and Max functions to extract the latest code 
 
 Import to your models::
 
-    from django_composite_auto_field.models.fields import CompositeAutoField
+    from django_composite_auto_field.fields import CompositeAutoField
 
 Usage::
 
