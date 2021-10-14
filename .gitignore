@@ -470,3 +470,5 @@ cython_debug/
 
 !/dist/
 /dist/
+!/PyPI.txt
+!/PyPI.txt
