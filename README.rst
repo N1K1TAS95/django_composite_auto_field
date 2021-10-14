@@ -7,13 +7,13 @@ django-composite-auto-field
 ----
 
 Installation
-----------
+------------
 Install django-composite-auto-field::
 
     pip install django-composite-auto-field
 
 Usage
-----------
+-----
 This field uses Django's Aggregate and Max functions to extract the latest code from the database and does a minimum of parsing to calculate the next code. This avoids having to store a counter in the database. Therefore, for correct operation, once the field arguments have been set, it is advisable not to modify them anymore, or to manually act on the codes already calculated and stored in the database.
 
 Import to your models::
@@ -46,18 +46,18 @@ For example. Using Arguments from above as shown, will result in codes::
 If the year is used, every year the counter will be automatically reset and the count will restart with 1.
 
 Release Notes
-----------
+-------------
 * 0.1.0 - initial release
     - provides CompositeAutoField for storing auto-incrementing field
     - supports Django 3.1 on python 3.6, 3.7, 3.8 and 3.9 - as per the `official django docs <https://docs.djangoproject.com/en/dev/faq/install/#what-python-version-can-i-use-with-django>`_
 
 Todo
----------
+----
     - ❌ Create test cases
     - ✔️ Initial release on GitHub
     - ❌ Initial release on PyPi
     - ❌ Improve last code parsing for make arguments changeable
 
 Contributing
-----------
+------------
 It's an open source project, so any contributions are welcome!
