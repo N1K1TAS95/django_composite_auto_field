@@ -55,7 +55,7 @@ Todo
 ----
     - ❌ Create test cases
     - ✔️ Initial release on GitHub
-    - ❌ Initial release on PyPi
+    - ✔️ Initial release on PyPi
     - ❌ Improve last code parsing for make arguments changeable
 
 Contributing
