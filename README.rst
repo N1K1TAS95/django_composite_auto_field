@@ -47,7 +47,7 @@ If the year is used, every year the counter will be automatically reset and the 
 
 Release Notes
 -------------
-* 0.1.0 - initial release
+* 0.1.1 - initial release
     - provides CompositeAutoField for storing auto-incrementing field
     - supports Django 3.1 on python 3.6, 3.7, 3.8 and 3.9 - as per the `official django docs <https://docs.djangoproject.com/en/dev/faq/install/#what-python-version-can-i-use-with-django>`_
 
