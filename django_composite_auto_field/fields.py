@@ -42,11 +42,10 @@ class CompositeAutoField(models.CharField):
             max_res = self.model.objects.aggregate(**{self.name + '_max': Max(self.name)})[self.name + '_max']
             next_num = 1
             cur_year = str(now().year)[2:]
-            print(self.use_year)
             if max_res:
                 if self.use_year:
                     last_year = int(max_res[len(self.prefix):4])
-                    if last_year == int(last_year):
+                    if last_year == int(cur_year):
                         next_num = int(max_res[len(self.prefix) + 2:]) + 1
                 else:
                     next_num = int(max_res[len(self.prefix):]) + 1
