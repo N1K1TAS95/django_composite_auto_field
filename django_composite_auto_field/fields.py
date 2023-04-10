@@ -8,19 +8,15 @@ from django.utils.translation import gettext_lazy as _
 
 class CompositeAutoField(models.CharField):
     warning = ("You passed an argument to CodeField that will be "
-               "ignored. Avoid args and following kwargs: max_length, unique, editable, null.")
-    description = _('custom auto incrementing field')
-    defaults = dict(max_length=255, unique=True, editable=False, null=True)
+               "ignored. Avoid args and following kwargs: max_length.")
+    description = _('Custom auto incrementing field')
+    defaults = dict(max_length=250)
 
     def __init__(self, *args, db_collation=None, prefix='CC', use_year=False, zeros=4, **kwargs):
         self.prefix = prefix
         self.use_year = use_year
         self.zeros = zeros
         self._warn_for_shadowing_args(*args, **kwargs)
-        kwargs['max_length'] = 255
-        kwargs['unique'] = True
-        kwargs['editable'] = False
-        kwargs['null'] = True
         kwargs.update(self.defaults)
         super().__init__(*args, db_collation=db_collation, **kwargs)
 
@@ -31,10 +27,6 @@ class CompositeAutoField(models.CharField):
         kwargs['use_year'] = self.use_year
         if self.zeros != 4:
             kwargs['zeros'] = self.zeros
-        del kwargs['max_length']
-        del kwargs['unique']
-        del kwargs['editable']
-        del kwargs['null']
         return name, path, args, kwargs
 
     def pre_save(self, model_instance, add):
