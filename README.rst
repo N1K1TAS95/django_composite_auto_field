@@ -69,6 +69,9 @@ To run tests::
 
 Release Notes
 -------------
+* 0.1.4
+    - fixed setup
+    - fixed description file (README.rst)
 * 0.1.3
     - added tests
     - added support for custom string as argument
