@@ -58,8 +58,11 @@ To run tests::
     # activate the virtual environment
     source venv\bin\activate
 
-    # installa requirements
+    # install requirements
     pip install -r .\requirements.txt
+
+    # run migrations
+    python manage.py migrate
 
     # run tests
     python manage.py test
