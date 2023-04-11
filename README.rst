@@ -27,7 +27,7 @@ Usage::
 
 Arguments::
 
-    prefix      # It's used to indicate prefix for the code
+    prefix      # It's used to indicate prefix for the code, default is "CC"
     use_year    # When it's True, last two numbers of current year will be used after prefix
     zero        # Indicated number of zeros before the number
 
@@ -44,19 +44,37 @@ For example. Using Arguments from above as shown, will result in codes::
     ...
 
 If the year is used, every year the counter will be automatically reset and the count will restart with 1.
+If you pass a string to the field, it will be used instead of the generated value. Pay attention to the passed values, they will be used for the generation of subsequent values.
+
+Tests
+-------------
+To run tests::
+
+    # clone this repository on your PC
+
+    # create the virtual environment
+    python -m venv venv
+
+    # activate the virtual environment
+    source venv\bin\activate
+
+    # installa requirements
+    pip install -r .\requirements.txt
+
+    # run tests
+    python manage.py test
 
 Release Notes
 -------------
+* 0.1.3
+    - added tests
+    - added support for custom string as argument
+    - added support for Django 4.2 on python 3.8, 3.9, 3.10 and 3.11 - as per the `official django docs <https://docs.djangoproject.com/en/dev/faq/install/#what-python-version-can-i-use-with-django>`_
+* 0.1.2
+    - fixed year change
 * 0.1.1 - initial release
     - provides CompositeAutoField for storing auto-incrementing field
     - supports Django 3.1 on python 3.6, 3.7, 3.8 and 3.9 - as per the `official django docs <https://docs.djangoproject.com/en/dev/faq/install/#what-python-version-can-i-use-with-django>`_
-
-Todo
-----
-    - ❌ Create test cases
-    - ✔️ Initial release on GitHub
-    - ✔️ Initial release on PyPi
-    - ❌ Improve last code parsing for make arguments changeable
 
 Contributing
 ------------
