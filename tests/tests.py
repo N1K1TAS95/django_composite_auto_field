@@ -3,7 +3,7 @@ from unittest.mock import patch
 from django.test import TestCase
 from django.utils.timezone import now
 
-from tests.models import TestModelA, TestModelB
+from tests.models import TestModelA, TestModelB, TestModelC
 
 
 class CompositeAutoFieldTestCase(TestCase):
@@ -78,7 +78,7 @@ class CompositeAutoFieldTestCase(TestCase):
 
         # Check if the custom_code field starts with the correct prefixes
         self.assertTrue(test_model_a.custom_code.startswith('AA'))
-        self.assertTrue(test_model_b.custom_code.startswith('BB'))
+        self.assertTrue(test_model_b.custom_code.startswith('BBB'))
 
     def test_zeros_variations(self):
         """
@@ -111,7 +111,7 @@ class CompositeAutoFieldTestCase(TestCase):
         # Check if the custom_code field has the custom value
         self.assertEqual(test_model_a.custom_code, custom_code_value)
 
-    def test_code_sequence(self):
+    def test_code_sequence_model_a(self):
         """
         Test that the custom_code field generates codes in the correct sequence.
         """
@@ -133,6 +133,34 @@ class CompositeAutoFieldTestCase(TestCase):
         self.assertEqual(test_model_1.custom_code[:4], f'AA{current_year}')
         self.assertEqual(test_model_2.custom_code[:4], f'AA{current_year}')
         self.assertEqual(test_model_3.custom_code[:4], f'AA{current_year}')
+
+        # Check that the numbers are in sequence
+        self.assertEqual(num_2, num_1 + 1)
+        self.assertEqual(num_3, num_2 + 1)
+
+
+    def test_code_sequence_model_c(self):
+        """
+        Test that the custom_code field generates codes in the correct sequence.
+        """
+        # Create three models
+        test_model_1 = TestModelC()
+        test_model_1.save()
+        test_model_2 = TestModelC()
+        test_model_2.save()
+        test_model_3 = TestModelC()
+        test_model_3.save()
+
+        # Extract the current year and the numeric parts of the generated codes
+        current_year = str(now().year)[2:]
+        num_1 = int(test_model_1.custom_code[5:])
+        num_2 = int(test_model_2.custom_code[5:])
+        num_3 = int(test_model_3.custom_code[5:])
+
+        # Check that the prefixes and years are correct
+        self.assertEqual(test_model_1.custom_code[:5], f'CCC{current_year}')
+        self.assertEqual(test_model_2.custom_code[:5], f'CCC{current_year}')
+        self.assertEqual(test_model_3.custom_code[:5], f'CCC{current_year}')
 
         # Check that the numbers are in sequence
         self.assertEqual(num_2, num_1 + 1)

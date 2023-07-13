@@ -36,7 +36,7 @@ class CompositeAutoField(models.CharField):
             cur_year = str(now().year)[2:]
             if max_res:
                 if self.use_year:
-                    last_year = int(max_res[len(self.prefix):4])
+                    last_year = int(max_res[len(self.prefix):len(self.prefix) + 2])
                     if last_year == int(cur_year):
                         next_num = int(max_res[len(self.prefix) + 2:]) + 1
                 else:

@@ -8,4 +8,8 @@ class TestModelA(models.Model):
 
 
 class TestModelB(models.Model):
-    custom_code = CompositeAutoField(prefix='BB', use_year=False, zeros=5)
+    custom_code = CompositeAutoField(prefix='BBB', use_year=False, zeros=5)
+
+
+class TestModelC(models.Model):
+    custom_code = CompositeAutoField(prefix='CCC', use_year=True, zeros=4)
