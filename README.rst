@@ -69,6 +69,8 @@ To run tests::
 
 Release Notes
 -------------
+* 0.1.5
+    - fixed code generation with prefix length different from 2
 * 0.1.4
     - fixed setup
     - fixed description file (README.rst)
